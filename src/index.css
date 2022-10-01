@@ -1,0 +1,309 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --bckg-light: #f1f1f1;
+  --main-light: #fff;
+  --title-light: #333;
+  --p-light: #555;
+  --input-border-light:#ddd;
+  
+  --bckg-dark: #1a1a1a;
+  --main-dark: #121212;
+  --title-dark: #b5b5b5;
+  --p-dark: #b5b5b5;
+  --text-dark: #fff;
+  --input-border-light:#252525;
+  --input-bckg-dark: #3b3b3b;
+  
+  --primary: #1aac83;
+  --error: #e7195a;
+  --error-bckg: #ffefef;
+  --radius: 5px;
+  --shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+.pages{
+  background: var(--main-light);
+  min-height: 100vh;
+}
+#dark .pages{
+  background: var(--bckg-dark);
+}
+header {
+  background: var(--main-light);
+  box-shadow: var(--shadow);
+}
+#dark header{
+  background: var(--main-dark);
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: var(--title-light);
+  text-decoration: none;
+}
+#dark header a{
+  color: var(--title-dark)
+}
+.pages{
+  max-width: 1400px;
+  padding: 3rem 3vw 3vw;
+  margin: 0 auto;
+}
+
+/* homepage */
+.home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10rem;
+}
+@media (max-width: 425px){
+  .home{
+    flex-wrap: wrap-reverse;
+  }
+}
+.btn-new{
+  margin-bottom: 5rem;
+}
+.home.newSong__component {
+  flex-wrap: wrap-reverse;
+}
+.newSong__component .word-search__component{
+  margin-top: 0;
+}
+.chord-search__component{
+  margin-top: 5rem;
+}
+
+.songs-container{
+  flex: 1 1 30vw;
+  margin: 10px;
+  position: relative;
+}
+
+.tools{
+  flex: 1 1 15vw;
+  margin: 10px;
+}
+
+.songs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.song-details, .chord-details {
+  flex: 0 1 250px;
+  background: var(--main-light);
+  border-radius: var(--radius);
+  margin: 20px 0;
+  padding: 20px;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+#dark .song-details, #dark .chord-details{
+  background: var(--main-dark);
+}
+.song-details h4, .songs-container .title {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+.songs-container .title {
+  font-weight: 800;
+}
+.songs-container__title-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.songs-container textarea{
+  font: inherit;
+  font-weight: normal;
+}
+.songs-container .btn{
+  /* position: absolute;
+  bottom: -10%;
+  right: 0; */
+  width: 100%;
+}
+
+.song-details p, .chord-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--p-light);
+  overflow: hidden;
+  /*white-space: nowrap;*/
+  text-overflow: ellipsis;
+}
+#dark .song-details p, #dark .chord-details p {
+  color: var(--p-dark);
+}
+
+.song-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: var(--bckg-light);
+  padding: 6px;
+  border-radius: 50%;
+  color: var(--title-light);
+}
+#dark .song-details span {
+  background: var(--bckg-dark);
+  color: var(--title-dark);
+}
+
+.song-details span.btn-edit{
+  right: 70px;
+}
+.btn-new{
+  width: 100%;
+}
+
+/* new song form */
+label, input {
+  display: block;
+}
+#dark label{
+  color: var(--text-dark);
+}
+input, textarea, select, option {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid var(--input-border-light);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  box-shadow: var(--shadow);
+  font: inherit;
+  font-size: inherit;
+}
+form button, .btn {
+  background: var(--primary);
+  border: 0;
+  color: var(--main-light);
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+#dark form button, #dark .btn{
+  color: var(--main-dark)
+}
+div.error {
+  padding: 10px;
+  background: var(--error-bckg);
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: var(--radius);
+  margin: 20px 0;
+}
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a, nav button {
+  margin-left: 10px;
+}
+nav button {
+  background: var(--main-light);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+}
+#dark nav button{
+  background: var(--main-dark);
+}
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--main-light);
+  border-radius: var(--radius);
+}
+#dark form.signup, #dark form.login{
+  background: var(--main-dark);
+}
+#accent{
+  color: var(--primary)
+}
+div h4#accent{
+  color: var(--primary)
+}
+.menu-btn{
+  background: none;
+  border-radius: var(--radius);
+  border: none;
+  display: none;
+}
+@media (max-width: 425px){
+  .menu-btn{
+    display: flex;
+  }
+  nav#hidden{
+    display: none;
+  }
+  nav{
+    position: absolute;
+    left:0;
+    top: 110px;
+    height: auto;
+    width: 100%;
+    background-color: var(--main-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0 1.5rem;
+  }
+  #dark nav{
+    background-color: var(--main-dark);
+  }
+  .nav__user-name{
+    display: block;
+    padding-bottom: 1rem;
+  }
+}
+#dark p, #dark h2, #dark h3, #dark h4, #dark h5, #dark .btn{
+  color: var(--text-dark);
+}
+#dark input, #dark textarea, #dark select, #dark option{
+  background: var(--input-bckg-dark);
+  color: var(--text-dark);
+}
+#dark .nav__user-name{
+  color: var(--title-dark);
+}
+#dark .song-details h4.green-title, #dark input.title{
+  color: var(--primary);
+}
+#dark{
+  background: var(--bckg-dark);
+}
