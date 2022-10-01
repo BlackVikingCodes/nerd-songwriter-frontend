@@ -16,7 +16,7 @@ const SongDetails = ({ song }) => {
       return
     }
 
-    const response = await fetch('/api/songs/' + song._id, {
+    const response = await fetch('https://nerd-songwriter-backend.vercel.app/api/songs/' + song._id, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`

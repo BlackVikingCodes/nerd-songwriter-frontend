@@ -19,7 +19,7 @@ const NewSong = () => {
 
   useEffect(() => {
     const fetchSong = async () => {
-      const response = await fetch(`/api/songs/${id}`, {
+      const response = await fetch(`https://nerd-songwriter-backend.vercel.app/api/songs/${id}`, {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
       const json = await response.json()
@@ -39,7 +39,7 @@ const NewSong = () => {
 
     const song = {title, lyrics}
 
-    const response = await fetch(`/api/songs/${id}`, {
+    const response = await fetch(`https://nerd-songwriter-backend.vercel.app/api/songs/${id}`, {
       method: 'PUT',
       body: JSON.stringify(song),
       headers: {

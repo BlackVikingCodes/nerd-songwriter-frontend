@@ -21,7 +21,7 @@ const SongForm = () => {
 
     const song = {title, lyrics}
 
-    const response = await fetch('/api/songs', {
+    const response = await fetch('https://nerd-songwriter-backend.vercel.app/api/songs', {
       method: 'POST',
       body: JSON.stringify(song),
       headers: {
