@@ -14,7 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchSongs = async () => {
-      const response = await fetch('https://nerd-songwriter-backend.vercel.app/api/songs', {
+      const response = await fetch('https://nerd-songwriter-api-pnnd.onrender.com/api/songs', {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
       const json = await response.json()
