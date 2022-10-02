@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy":"https://nerd-songwriter-backend.onrender.com",
+  "proxy":"https://nerd-songwriter-backend.vercel.app/",
   "homepage": "https://nerd-songwriter.vercel.app",
   "private": true,
   "dependencies": {
