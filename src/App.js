@@ -22,20 +22,20 @@ function App() {
         <div className="pages">
           <Routes>
             <Route 
-              path="api/songs" 
-              element={user ? <Home /> : <Navigate to="api/user/login" />} 
+              path="/" 
+              element={user ? <Home /> : <Navigate to="/login" />} 
             />
             <Route 
-              path="api/songs/:id" 
-              element={user ? <NewSong /> : <Navigate to="api/user/login" />} 
+              path="/:id" 
+              element={user ? <NewSong /> : <Navigate to="/login" />} 
             />
             <Route 
-              path="api/user/login" 
-              element={!user ? <Login /> : <Navigate to="api/songs" />} 
+              path="/login" 
+              element={!user ? <Login /> : <Navigate to="/" />} 
             />
             <Route 
-              path="api/user/signup" 
-              element={!user ? <Signup /> : <Navigate to="api/songs" />} 
+              path="/signup" 
+              element={!user ? <Signup /> : <Navigate to="/" />} 
             />
           </Routes>
         </div>
