@@ -4,7 +4,6 @@ module.exports = function(app){
   app.use(
     proxy("/api",{
       target:"https://nerd-songwriter-backend.onrender.com",
-      secure: false,
       changeOrigin: true
     })
   );
