@@ -10,7 +10,7 @@ export const useLogin = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('https://nerd-songwriter-api-pnnd.onrender.com/api/user/login', {
+    const response = await fetch('https://nerd-songwriter-backend.onrender.com/api/user/login', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ userName, password })

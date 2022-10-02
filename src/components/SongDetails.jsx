@@ -16,7 +16,7 @@ const SongDetails = ({ song }) => {
       return
     }
 
-    const response = await fetch('https://nerd-songwriter-api-pnnd.onrender.com/api/songs/' + song._id, {
+    const response = await fetch('https://nerd-songwriter-backend.onrender.com/api/songs/' + song._id, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`
