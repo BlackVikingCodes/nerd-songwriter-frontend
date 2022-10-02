@@ -14,7 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchSongs = async () => {
-      const response = await fetch('https://nerd-songwriter-backend.onrender.com/api/songs', {
+      const response = await fetch('/api/songs', {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
       const json = await response.json()
