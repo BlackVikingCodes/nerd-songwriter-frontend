@@ -1,8 +1,14 @@
-const proxy = require('http-proxy-middleware');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function(app){
   app.use(
-    proxy("/api",{
+    createProxyMiddleware("/api/user",{
+      target:"https://nerd-songwriter-backend.onrender.com",
+      changeOrigin: true
+    })
+  );
+  app.use(
+    createProxyMiddleware("/api/songs",{
       target:"https://nerd-songwriter-backend.onrender.com",
       changeOrigin: true
     })
