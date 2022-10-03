@@ -19,6 +19,8 @@ const Signup = () => {
     if(regexPass.test(prePassword) && prePassword.length>=8){
       setStrongPassword(true)
       setPassword(prePassword)
+    }else{
+      setStrongPassword(false)
     }
   
   }, [prePassword])
