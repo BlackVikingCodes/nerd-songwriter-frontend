@@ -16,7 +16,7 @@ const Login = () => {
 
   useEffect(() => {
     let regexPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/
-    if(regexPass.test(prePassword)){
+    if(regexPass.test(prePassword) && prePassword.length>=8){
       setStrongPassword(true)
       setPassword(prePassword)
     }
