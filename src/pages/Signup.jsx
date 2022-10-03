@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useSignup } from "../hooks/useSignup"
 
 const Signup = () => {
@@ -14,11 +14,14 @@ const Signup = () => {
     await signup(userName, password)
   }
 
-  let regexPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/
-  if(regexPass.test(prePassword)){
-    setStrongPassword(true)
-    setPassword(prePassword)
-  }
+  useEffect(() => {
+    let regexPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/
+    if(regexPass.test(prePassword)){
+      setStrongPassword(true)
+      setPassword(prePassword)
+    }
+  
+  }, [prePassword])
 
   return (
     <form className="signup" onSubmit={handleSubmit}>
