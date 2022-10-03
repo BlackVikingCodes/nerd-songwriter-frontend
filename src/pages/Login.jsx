@@ -21,7 +21,6 @@ const Login = () => {
     setPassword(prePassword)
   }
 
-
   return (
     <form className="login" onSubmit={handleSubmit}>
       <h3>Log In</h3>
@@ -36,7 +35,7 @@ const Login = () => {
       <input 
         type="password" 
         onChange={(e) => setPrePassword(e.target.value)} 
-        value={password} 
+        value={prePassword} 
       />
       {!strongPassword && 
         <div>
