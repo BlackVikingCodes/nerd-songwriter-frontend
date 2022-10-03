@@ -204,6 +204,13 @@ form button, .btn {
   border-radius: var(--radius);
   cursor: pointer;
 }
+button.btn.btn-login:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+ul, li{
+  color: var(--error);
+}
 #dark form button, #dark .btn{
   color: var(--main-dark)
 }

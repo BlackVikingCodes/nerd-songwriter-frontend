@@ -4,6 +4,7 @@ import { useLogin } from "../hooks/useLogin"
 const Login = () => {
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
+  const [prePassword, setPrePassword] = useState('')
   const [strongPassword, setStrongPassword] = useState(false)
   const {login, error, isLoading} = useLogin()
 
@@ -13,13 +14,13 @@ const Login = () => {
     await login(userName, password)
   }
 
-  const handlePassword = (e) => {
-    let regexPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/
-    if(regexPass.test(e.target.value)){
-      setStrongPassword(true)
-      setPassword(e.target.value)
-    }
+
+  let regexPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/
+  if(regexPass.test(prePassword)){
+    setStrongPassword(true)
+    setPassword(prePassword)
   }
+
 
   return (
     <form className="login" onSubmit={handleSubmit}>
@@ -34,7 +35,7 @@ const Login = () => {
       <label>Password:</label>
       <input 
         type="password" 
-        onChange={handlePassword} 
+        onChange={(e) => setPrePassword(e.target.value)} 
         value={password} 
       />
       {!strongPassword && 
