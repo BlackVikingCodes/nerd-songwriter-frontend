@@ -4,7 +4,6 @@ import { useSignup } from "../hooks/useSignup"
 const Signup = () => {
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
-  const [prePassword, setPrePassword] = useState('')
   const [strongPassword, setStrongPassword] = useState(false)
   const {signup, error, isLoading} = useSignup()
 
@@ -16,14 +15,13 @@ const Signup = () => {
 
   useEffect(() => {
     let regexPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/
-    if(regexPass.test(prePassword) && prePassword.length>=8){
+    if(regexPass.test(password) && password.length>=8){
       setStrongPassword(true)
-      setPassword(prePassword)
-    }else{
+    } else{
       setStrongPassword(false)
     }
   
-  }, [prePassword])
+  }, [password])
 
   return (
     <form className="signup" onSubmit={handleSubmit}>
@@ -38,8 +36,8 @@ const Signup = () => {
       <label>Password:</label>
       <input 
         type="password" 
-        onChange={(e) => setPrePassword(e.target.value)} 
-        value={prePassword} 
+        onChange={(e) => setPassword(e.target.value)} 
+        value={password} 
       />
       {!strongPassword && 
         <div>

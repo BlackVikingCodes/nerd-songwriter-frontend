@@ -4,7 +4,6 @@ import { useLogin } from "../hooks/useLogin"
 const Login = () => {
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
-  const [prePassword, setPrePassword] = useState('')
   const [strongPassword, setStrongPassword] = useState(false)
   const {login, error, isLoading} = useLogin()
 
@@ -16,19 +15,14 @@ const Login = () => {
 
   useEffect(() => {
     let regexPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/
-    if(regexPass.test(prePassword) && prePassword.length>=8){
+    if(regexPass.test(password) && password.length>=8){
       setStrongPassword(true)
-      setPassword(prePassword)
     } else{
       setStrongPassword(false)
     }
   
-  }, [prePassword])
+  }, [password])
   
-
-
- 
-
   return (
     <form className="login" onSubmit={handleSubmit}>
       <h3>Log In</h3>
@@ -42,8 +36,8 @@ const Login = () => {
       <label>Password:</label>
       <input 
         type="password" 
-        onChange={(e) => setPrePassword(e.target.value)} 
-        value={prePassword} 
+        onChange={(e) => setPassword(e.target.value)} 
+        value={password} 
       />
       {!strongPassword && 
         <div>
