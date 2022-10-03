@@ -1,20 +1,20 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function(app){
-  app.use(
-    createProxyMiddleware("/api/user/login",{
+  app.use("/api/user/login",
+    createProxyMiddleware({
       target:"nerd-songwriter-api.fly.dev",
       changeOrigin: true
     })
   );
-  app.use(
-    createProxyMiddleware("/api/user/signup",{
+  app.use("/api/user/signup",
+    createProxyMiddleware({
       target:"nerd-songwriter-api.fly.dev",
       changeOrigin: true
     })
   );
-  app.use(
-    createProxyMiddleware("/api/songs",{
+  app.use("/api/songs",
+    createProxyMiddleware({
       target:"nerd-songwriter-api.fly.dev",
       changeOrigin: true
     })
