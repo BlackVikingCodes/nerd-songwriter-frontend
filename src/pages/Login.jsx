@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Link } from 'react-router-dom'
 import { useLogin } from "../hooks/useLogin"
 
 const Login = () => {
@@ -52,6 +53,9 @@ const Login = () => {
 
       <button className="btn btn-login" disabled={isLoading||!strongPassword}>Log in</button>
       {error && <div className="error">{error}</div>}
+      <Link to="/signup">
+        Don't have an account?
+      </Link>
     </form>
   )
 }
