@@ -280,7 +280,7 @@ div h4#accent{
   nav{
     position: absolute;
     left:0;
-    top: 110px;
+    top: 112px;
     height: auto;
     width: 100%;
     background-color: var(--main-light);
@@ -297,6 +297,16 @@ div h4#accent{
     display: block;
     padding-bottom: 1rem;
   }
+  nav div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav div a:hover {
+    padding-left: 0.3rem;
+    color: var(--primary);
+  }
+
 }
 #dark p, #dark h2, #dark h3, #dark h4, #dark h5, #dark .btn{
   color: var(--text-dark);
