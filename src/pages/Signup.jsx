@@ -53,6 +53,7 @@ const Signup = () => {
 
       <button className="btn btn-signup" disabled={isLoading}>Sign up</button>
       {error && <div className="error">{error}</div>}
+      <br/>
       <Link to="/login">
         Already have an account?
       </Link>

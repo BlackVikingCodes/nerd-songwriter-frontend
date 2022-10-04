@@ -53,6 +53,7 @@ const Login = () => {
 
       <button className="btn btn-login" disabled={isLoading||!strongPassword}>Log in</button>
       {error && <div className="error">{error}</div>}
+      <br/>
       <Link to="/signup">
         Don't have an account?
       </Link>
