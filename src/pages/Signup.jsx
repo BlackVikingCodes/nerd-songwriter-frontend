@@ -25,39 +25,40 @@ const Signup = () => {
   }, [password])
 
   return (
-    <form className="signup" onSubmit={handleSubmit}>
-      <h3>Sign Up</h3>
+    <div className="auth-container">
+      <form className="signup" onSubmit={handleSubmit}>
+        <h3>Sign Up</h3>
       
-      <label>User Name:</label>
-      <input 
-        type="text" 
-        onChange={(e) => setUserName(e.target.value)} 
-        value={userName} 
-      />
-      <label>Password:</label>
-      <input 
-        type="password" 
-        onChange={(e) => setPassword(e.target.value)} 
-        value={password} 
-      />
-      {!strongPassword && 
-        <div>
-          <p>Your password isn't strong enough. <br/> Make sure to have:</p>
-          <ul>
-            <li>At least one uppercase letter</li>
-            <li>At least one number</li>
-            <li>At least one symbol</li>
-          </ul>
-        </div>
-      }
-
-      <button className="btn btn-signup" disabled={isLoading}>Sign up</button>
-      {error && <div className="error">{error}</div>}
-      <br/>
-      <Link to="/login">
-        Already have an account?
-      </Link>
-    </form>
+        <label>User Name:</label>
+        <input
+          type="text"
+          onChange={(e) => setUserName(e.target.value)}
+          value={userName}
+        />
+        <label>Password:</label>
+        <input
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+        <button className="btn btn-signup" disabled={isLoading}>Sign up</button>
+        {error && <div className="error">{error}</div>}
+        {(error && !strongPassword) &&
+          <div className="error error-password">
+            <p>Your password isn't strong enough. <br/> Make sure to have:</p>
+            <ul>
+              <li>At least one uppercase letter</li>
+              <li>At least one number</li>
+              <li>At least one symbol</li>
+            </ul>
+          </div>
+        }
+        <br/>
+        <Link to="/login">
+          Already have an account?
+        </Link>
+      </form>
+    </div>
   )
 }
 

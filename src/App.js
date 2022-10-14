@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
-import { useThemeContext } from './hooks/useThemeContext'
+import ScrollToTop from "react-scroll-to-top";
 
 // pages & components
 import Home from './pages/Home'
@@ -11,12 +11,9 @@ import Navbar from './components/Navbar'
 
 function App() {
   const { user } = useAuthContext()
-  const { theme } = useThemeContext()
-
-  document.body.id = {theme}
 
   return (
-    <div className="App" id={theme}>
+    <div className="App" >
       <BrowserRouter>
         <Navbar />
         <div className="pages">
@@ -40,6 +37,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
+      <ScrollToTop className='top-btn' color='#179b34' smooth />
     </div>
   );
 }

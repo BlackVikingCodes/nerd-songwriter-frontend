@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy":"nerd-songwriter-api.fly.dev",
+  "proxy": "https://nerd-songwriter-api.fly.dev",
   "homepage": "https://nerd-songwriter.vercel.app",
   "private": true,
   "dependencies": {
@@ -14,6 +14,7 @@
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-scroll-to-top": "^3.0.0",
     "react-switch": "^7.0.0",
     "web-vitals": "^2.1.4"
   },
